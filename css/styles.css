@@ -1,0 +1,572 @@
+/* ==========================================================
+   HOJA EXTERNA – Mundo Minecraft (v3)
+   ========================================================== */
+
+/* ---------- VARIABLES GLOBALES ---------- */
+:root {
+    --color-pasto: #5b8731;
+    --color-tierra: #6b4a2e;
+    --color-piedra: #3b3b3b;
+    --color-diamante: #2cb5a5;
+    --color-oro: #f5c542;
+    --color-fondo: #e6e2d3;
+    --color-papel: #fbfaf5;
+    --color-texto: #262626;
+    --radio: 6px;
+    --espacio: 1.25rem;
+    --fuente: "Courier New", Courier, monospace;
+}
+
+/* ---------- UNIVERSAL ---------- */
+* {
+    box-sizing: border-box;
+}
+
+/* ---------- ELEMENTOS ---------- */
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+}
+
+p {
+    margin: 0 0 0.75rem;
+}
+
+/* ---------- AGRUPADO ---------- */
+h1, h2, h3 {
+    color: var(--color-piedra);
+    line-height: 1.2;
+}
+
+/* ---------- CLASE ---------- */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ---------- MARCO GENERAL: móvil = una columna ---------- */
+.derecha {
+    min-width: 0;
+}
+
+/* ---------- BARRA LATERAL / ENCABEZADO (selector de id) ---------- */
+#cabecera {
+    background-color: var(--color-pasto);
+    border-bottom: 6px solid var(--color-tierra);
+    padding: 1rem 5%;
+}
+
+.marca {
+    margin-bottom: 0.75rem;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 #000;
+}
+
+/* Bloque de pasto dibujado con CSS (pseudoelemento) */
+.logo::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin-right: 0.6rem;
+    vertical-align: middle;
+    background: linear-gradient(var(--color-oro) 0 0) 0 0 / 0 0 no-repeat,
+                linear-gradient(#7cb342 0 35%, var(--color-tierra) 35%);
+    border: 3px solid #000;
+}
+
+.lema {
+    margin: 0.25rem 0 0;
+    color: #e6f2d8;
+    font-size: 0.85rem;
+}
+
+/* Hijo directo (>) */
+nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+/* element.clase: enlaces del menú */
+a.menu {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    border-bottom: 4px solid transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Pseudoclases en orden LVHA */
+a.menu:link {
+    color: #fff;
+}
+
+a.menu:visited {
+    color: #e6e2d3;
+}
+
+a.menu:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-bottom-color: var(--color-oro);
+}
+
+a.menu:active {
+    color: var(--color-diamante);
+}
+
+a.menu.activo {
+    background-color: var(--color-tierra);
+    border-bottom-color: var(--color-oro);
+}
+
+/* ---------- DESCENDIENTE ---------- */
+main section {
+    padding: 1.25rem 0;
+}
+
+/* ---------- HERMANOS ---------- */
+h2 ~ p {
+    max-width: 70ch;
+}
+
+h1 + p {
+    font-size: 1.15rem;
+    color: var(--color-tierra);
+}
+
+/* ---------- PORTADA (Flexbox) ---------- */
+.portada {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espacio);
+}
+
+.portada > div {
+    flex: 1 1 300px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    background-color: var(--color-diamante);
+    color: #fff;
+    border: 3px solid var(--color-piedra);
+    border-radius: var(--radio);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: var(--color-piedra);
+}
+
+/* ---------- PSEUDOELEMENTOS ---------- */
+.texto-historia p::first-letter {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--color-pasto);
+}
+
+.texto-historia p::first-line {
+    font-weight: bold;
+}
+
+::selection {
+    background-color: var(--color-oro);
+    color: #000;
+}
+
+ul li::marker {
+    color: var(--color-pasto);
+    content: "◆ ";
+}
+
+/* ---------- LISTAS ---------- */
+.lista-modos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-modos li {
+    background-color: #ccc;
+    padding: 0.6rem 0.9rem;
+    margin: 0.4rem 0;
+    border-radius: var(--radio);
+}
+
+.lista-modos li:nth-child(odd) {
+    background-color: #d8e6c3;
+}
+
+.lista-modos li:nth-child(even) {
+    background-color: #efe3c4;
+}
+
+.lista-modos li:first-child {
+    border-left: 8px solid var(--color-pasto);
+}
+
+.lista-modos li:last-child {
+    border-left: 8px solid #b22222;
+}
+
+.lista-modos li:nth-child(3) {
+    border-left: 8px solid var(--color-diamante);
+}
+
+.curiosidades li:nth-child(2n+2) {
+    font-weight: bold;
+}
+
+/* ---------- ASIDE ---------- */
+aside {
+    background-color: var(--color-piedra);
+    color: #fff;
+    border-radius: var(--radio);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+}
+
+aside h2 {
+    color: var(--color-oro);
+    margin-top: 0;
+}
+
+aside a {
+    color: #bfeee8;
+}
+
+/* ==========================================================
+   CATÁLOGO SIN CAJAS: fichas circulares (Grid)
+   ========================================================== */
+.catalogo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem var(--espacio);
+    padding-bottom: 2rem;
+    counter-reset: objeto;
+}
+
+.tarjeta {
+    /* variables LOCALES */
+    --color-borde: var(--color-piedra);
+    --color-etiqueta: var(--color-tierra);
+
+    counter-increment: objeto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.5rem 1.25rem;
+    border-bottom: 3px dotted var(--color-borde);
+}
+
+/* Imagen dentro de un círculo con anillo de color */
+.circulo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0.9rem;
+}
+
+.circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--color-borde);
+    background-color: var(--color-papel);
+    transition: transform 0.2s;
+}
+
+.tarjeta:hover .circulo img {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+/* Número del objeto (contador CSS) */
+.circulo::after {
+    content: counter(objeto);
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    min-width: 34px;
+    height: 34px;
+    line-height: 30px;
+    text-align: center;
+    background-color: var(--color-oro);
+    border: 3px solid #000;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.tarjeta h3 {
+    margin: 0;
+    color: var(--color-etiqueta);
+}
+
+.tarjeta .tipo {
+    margin: 0.2rem 0 0.6rem;
+    padding: 0.05rem 0.7rem;
+    background-color: var(--color-borde);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta p {
+    margin: 0 0 0.4rem;
+}
+
+.tarjeta .receta {
+    font-style: italic;
+}
+
+.tarjeta .receta::before {
+    content: "⚒ ";
+}
+
+.tarjeta .dato::after {
+    content: " (Java Edition)";
+    color: #777;
+    font-size: 0.8em;
+}
+
+/* Selectores de atributo */
+.tarjeta[data-tipo="arma"] {
+    --color-borde: #b22222;
+}
+
+.tarjeta[data-tipo="armadura"] {
+    --color-borde: var(--color-diamante);
+}
+
+.tarjeta[data-tipo="herramienta"] {
+    --color-borde: var(--color-tierra);
+}
+
+.tarjeta[data-tipo="comida"] {
+    --color-borde: #c9971c;
+}
+
+.tarjeta img[alt*="diamante"] {
+    outline: 3px solid var(--color-diamante);
+    outline-offset: 3px;
+}
+
+.tarjeta img[alt$="Ender"] {
+    outline: 3px dashed #7a3fb0;
+    outline-offset: 3px;
+}
+
+a[target] {
+    font-weight: bold;
+}
+
+a[href^="http"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+}
+
+/* Enlace «Ver más» como píldora */
+.tarjeta > a {
+    margin-top: auto;
+    padding: 0.35rem 1.1rem;
+    background-color: var(--color-etiqueta);
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.tarjeta > a:hover {
+    background-color: var(--color-piedra);
+}
+
+/* ---------- PÁGINA 3 ---------- */
+.guia {
+    background-color: var(--color-papel);
+    border-left: 8px solid var(--color-pasto);
+    border-radius: var(--radio);
+    padding: 1rem 1.25rem;
+    margin-bottom: var(--espacio);
+}
+
+.guia:target {
+    border-left-color: var(--color-oro);
+    box-shadow: 0 0 0 3px var(--color-oro);
+}
+
+.guia h3 {
+    margin-top: 0;
+}
+
+.pasos {
+    padding-left: 1.5rem;
+}
+
+/* ==========================================================
+   BARRA INFERIOR: pie en capas de terreno (Grid)
+   ========================================================== */
+footer {
+    margin-top: 2rem;
+    background-color: var(--color-tierra);
+    color: #f3ead9;
+}
+
+/* Franja de pasto recta */
+.pasto {
+    height: 22px;
+    background-color: var(--color-pasto);
+}
+
+.pie-cols {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.pie-cols h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: var(--color-oro);
+    text-transform: uppercase;
+}
+
+.pie-cols ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Quita los rombos del marcador dentro del pie */
+.pie-cols li::marker {
+    content: "";
+}
+
+.pie-cols a {
+    color: #fff;
+}
+
+.pie-cols img {
+    width: 64px;
+    background-color: #fff;
+    border-radius: var(--radio);
+    padding: 3px;
+    image-rendering: auto;
+}
+
+.derechos {
+    margin: 0;
+    padding: 0.75rem 5%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 0.85rem;
+}
+
+/* !important visto en clase */
+footer li a[target="_blank"] {
+    color: var(--color-oro) !important;
+}
+
+/* ==========================================================
+   MEDIA QUERIES
+   ========================================================== */
+
+/* Tableta: 2 columnas */
+@media (min-width: 600px) {
+    .catalogo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pie-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Escritorio: 3 columnas + barra lateral */
+@media (min-width: 960px) {
+    .catalogo {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .pie-cols {
+        grid-template-columns: 2fr 1fr 1fr auto;
+    }
+
+    /* Flexbox: marco con menú lateral fijo */
+    .marco {
+        display: flex;
+        align-items: flex-start;
+    }
+    #cabecera {
+        flex: 0 0 240px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        padding: 1.5rem 0;
+        border-bottom: none;
+        border-right: 6px solid var(--color-tierra);
+    }
+    .marca {
+        padding: 0 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+    .logo::before {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 0 0.75rem;
+    }
+    nav > ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    a.menu {
+        padding: 0.8rem 1.25rem;
+        border-bottom: none;
+        border-left: 6px solid transparent;
+    }
+    a.menu:hover,
+    a.menu.activo {
+        border-left-color: var(--color-oro);
+        border-bottom-color: transparent;
+    }
+    .derecha {
+        flex: 1;
+    }
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 400px) {
+    :root {
+        --espacio: 0.75rem;
+    }
+}

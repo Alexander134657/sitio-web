@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio · Mundo Minecraft</title>
+    <!-- Hoja de estilo EXTERNA -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Hoja de estilo INTERNA: solo para la portada -->
+    <style>
+        .portada img {
+            border: 4px solid var(--color-piedra);
+            border-radius: var(--radio);
+            max-width: 380px;
+            margin: 0 auto;
+            image-rendering: auto;
+        }
+        #historia {
+            background-color: var(--color-papel);
+            border-left: 8px solid var(--color-tierra);
+            padding-left: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="marco">
+    <header id="cabecera">
+        <div class="marca">
+            <p class="logo">Mundo Minecraft</p>
+            <p class="lema">Guía de bloques y supervivencia</p>
+        </div>
+        <nav aria-label="Menú principal"><ul><li><a class="menu activo" href="index.html" aria-current="page">Inicio</a></li><li><a class="menu" href="catalogo.html">Catálogo</a></li><li><a class="menu" href="pagina3.html">Guía de supervivencia</a></li></ul></nav>
+    </header>
+    <div class="derecha">
+    <main>
+        <div class="contenedor">
+            <div class="portada">
+                <div>
+                    <h1>Mundo Minecraft</h1>
+                    <p>Construya, explore y sobreviva en un mundo hecho de bloques. Aquí encontrará los objetos más útiles del juego y una guía para su primera semana.</p>
+                    <a class="boton" href="catalogo.html">Ver objetos del juego</a>
+                </div>
+                <div>
+                    <img src="Imagenes/portada_maicra.jpg" alt="portada" width="400" height="360">
+                </div>
+            </div>
+
+            <section id="historia" class="texto-historia">
+                <h2>¿Qué es Minecraft?</h2>
+                <p>Minecraft es un videojuego de mundo abierto donde todo está hecho de bloques que se pueden romper, recolectar y colocar. Cada mundo se genera a partir de una semilla, por lo que no hay dos aventuras idénticas.</p>
+                <p>Lo creó el sueco Markus «Notch» Persson, que publicó las primeras versiones en 2009. La versión completa salió el 18 de noviembre de 2011 y Microsoft compró el estudio Mojang en 2014. Hoy se juega en ordenador, consolas y móviles.</p>
+                <p style="font-style: italic; color: #6b4a2e;">Consejo de inicio: su primera meta es siempre la misma, conseguir madera antes de que anochezca.</p>
+            </section>
+
+            <section>
+                <h2>Modos de juego</h2>
+                <ul class="lista-modos">
+                    <li><strong>Supervivencia:</strong> se debe recolectar recursos, comer y defenderse de los monstruos.</li>
+                    <li><strong>Creativo:</strong> bloques ilimitados y vuelo, ideal para construir sin límites.</li>
+                    <li><strong>Aventura:</strong> pensado para mapas creados por otros jugadores, con restricciones al romper bloques.</li>
+                    <li><strong>Espectador:</strong> permite recorrer el mundo atravesando bloques sin interactuar.</li>
+                    <li><strong>Hardcore:</strong> supervivencia en dificultad máxima; si el jugador muere, pierde el mundo.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Cinco cosas interesantes</h2>
+                <ul class="curiosidades">
+                    <li>El mundo tiene tres dimensiones: la superficie, el Nether y el End.</li>
+                    <li>La redstone permite fabricar circuitos, puertas automáticas y hasta calculadoras.</li>
+                    <li>El Dragón de Ender es el jefe final que vive en el End.</li>
+                    <li>Los mundos se generan desde una semilla: compartirla permite explorar el mismo paisaje.</li>
+                    <li>Según cifras de Microsoft de 2023, se han vendido más de 300 millones de copias.</li>
+                </ul>
+            </section>
+
+            <aside>
+                <h2>¿Primera vez jugando?</h2>
+                <p>Lea la <a href="pagina3.html">guía de supervivencia</a> o revise los 12 objetos del <a href="catalogo.html">catálogo</a>.</p>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <div class="pasto" aria-hidden="true"></div>
+        <div class="pie-cols">
+            <div>
+                <h2>Informacion</h2>
+                <p>Desarollo de aplicaciones web</p>
+                <p>Imagenes - pertenece a minecraftsearch</p>
+            </div>
+            <div>
+                <h2>Páginas</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="pagina3.html">Guía</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Enlaces</h2>
+                <ul>
+                    <li><a href="https://www.minecraft.net" target="_blank" rel="noopener">minecraft.net</a></li>
+                    <li><a href="https://minecraft.wiki" target="_blank" rel="noopener">Minecraft Wiki</a></li>
+                    <li><a href="https://minecraftsearch.com/es-ES" target="_blank" rel="noopener">Minecraft search</a></li>
+                </ul>
+            </div>
+            <div>
+                <img src="Imagenes/logo_ug.png" alt="Logo de la Universidad de Guayaquil" width="64" height="73">
+            </div>
+        </div>
+        <p class="derechos">Universidad de guayaquil</p>
+    </footer>
+    </div>
+    </div>
+</body>
+</html>
